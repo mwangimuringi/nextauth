@@ -1,6 +1,8 @@
 import { Poppins } from "next/font/google";
 import { cn } from '@/lib/utils';
 import React from 'react';
+import { LoginButton } from "@/components/auth/LoginButton";
+import { Button } from "@/components/ui/button";
 
 
 
@@ -22,6 +24,13 @@ export default function Home () {
         <p className="text-white text-lg">
           A simple authentication service
         </p>
+        <div>
+          <LoginButton  asChild>
+            <Button variant="secondary" size="lg">
+              Sign in
+            </Button>
+          </LoginButton>
+        </div>
       </div>
     </main>
   )
