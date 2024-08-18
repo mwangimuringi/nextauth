@@ -2,9 +2,9 @@
 
 import { CardWrapperProps } from "@/types";
 import { Card, CardContent, CardFooter, CardHeader } from "../ui/card";
-import { Header } from "./header";
 import { Social } from "./Social";
 import BackButton from "./BackButton";
+import { Header } from "./Header";
 
 export const CardWrapper = ({
   children,
