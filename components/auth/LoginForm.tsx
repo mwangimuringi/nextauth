@@ -20,6 +20,7 @@ import { CardWrapper } from "./CardWrapper";
 import { Button } from "../ui/button";
 import { FormError } from "../FormError";
 import { FormSuccess } from "../FormSuccess";
+import { login } from "@/actions/login";
 
 export const LoginForm = () => {
   const form = useForm<z.infer<typeof LoginSchema>>({
@@ -31,7 +32,7 @@ export const LoginForm = () => {
   });
 
   const onSubmit = (values: z.infer<typeof LoginSchema>) => {
-    console.log("Password clicked");
+    login(values)
   };
 
   return (
