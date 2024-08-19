@@ -29,3 +29,7 @@ export interface BackButtonProps {
 export interface FormSuccessProps {
     message?: string;
   };
+
+export interface MiddlewareProps {
+    req?: any
+};
