@@ -43,14 +43,19 @@ model Account {
   token_type        String?
   scope             String?
   id_token          String?  @db.Text
-  session_state     String?
- 
-  // createdAt DateTime @default(now())
-  // updatedAt DateTime @updatedAt
- 
+  session_state     String? 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
  
   @@id([provider, providerAccountId])
 }
  
+ model VerificationToken {
+  id        String   @id @default(cuid())
+  email      String  @unique
+  token      String  @unique
+  expires    DateTime
+ 
+  @@unique([email, token])
+  @@map("verificationtokens")
+}
  
