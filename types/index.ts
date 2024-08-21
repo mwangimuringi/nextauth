@@ -33,3 +33,12 @@ export interface FormSuccessProps {
 export interface MiddlewareProps {
     req?: any
 };
+
+export interface ProtectedLayoutProps {
+  children: React.ReactNode;
+}
+
+
+export interface LogoutButtonProps {
+  children?: React.ReactNode;
+};
