@@ -26,6 +26,10 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
           // Allow OAuth without email verification
           if (account?.provider !== "credentials") return true;
     
+          if (!user.id) {
+            throw new Error("User ID is missing or undefined.");
+          }
+          
           const existingUser = await getUserById(user.id);
     
           // Prevent sign in without email verification
