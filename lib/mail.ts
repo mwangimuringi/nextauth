@@ -14,7 +14,7 @@ const domain = process.env.NEXT_PUBLIC_APP_URL;
 // };
 
 export const sendPasswordResetEmail = async (email: string, token: string) => {
-  const resetLink = `http://localhost:3000/auth/new-reset?token=${token}`;
+  const resetLink = `http://localhost:3000/auth/new-password?token=${token}`;
 
   await resend.emails.send({
     from: 'onboarding@resend.dev',
