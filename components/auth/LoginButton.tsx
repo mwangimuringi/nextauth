@@ -1,10 +1,17 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import { LoginButtonProps } from "@/types";
 
+import { useRouter } from "next/navigation";
+import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
+import { LoginForm } from "./LoginForm";
 
-export const LoginButton = ({ children, mode = "redirect", asChild }: LoginButtonProps) => {
+
+export const LoginButton = ({
+  children,
+  mode = "redirect",
+  asChild
+}: LoginButtonProps) => {
   const router = useRouter();
 
   const onClick = () => {
@@ -12,9 +19,16 @@ export const LoginButton = ({ children, mode = "redirect", asChild }: LoginButto
   };
 
   if (mode === "modal") {
-    <span>
-        TODO: Implement modal
-    </span>
+    return (
+      <Dialog>
+        <DialogTrigger asChild={asChild}>
+          {children}
+        </DialogTrigger>
+        <DialogContent className="p-0 w-auto bg-transparent border-none">
+          <LoginForm />
+        </DialogContent>
+      </Dialog>
+    )
   }
 
   return (
