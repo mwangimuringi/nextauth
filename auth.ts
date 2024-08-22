@@ -77,8 +77,9 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
 
       return session;
     },
+
     async jwt({ token }) {
-      if (!token.sub) return token; //logged out
+      if (!token.sub) return token; // Logged out
 
       const existingUser = await getUserById(token.sub);
 
