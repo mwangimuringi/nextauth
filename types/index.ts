@@ -1,3 +1,5 @@
+import { UserRole } from "@prisma/client";
+
 export interface LoginButtonProps {
     children: React.ReactNode;
     mode?: "modal" | "redirect",
@@ -41,4 +43,9 @@ export interface ProtectedLayoutProps {
 
 export interface LogoutButtonProps {
   children?: React.ReactNode;
+};
+
+export interface RoleGateProps {
+  children: React.ReactNode;
+  allowedRole: UserRole;
 };
