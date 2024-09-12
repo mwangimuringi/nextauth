@@ -1,3 +1,4 @@
+// in this file we add the configuration for the authentication provider:
 import type { NextAuthConfig } from "next-auth"
 import Credentials from "next-auth/providers/credentials"
 import { LoginSchema } from "./schemas";

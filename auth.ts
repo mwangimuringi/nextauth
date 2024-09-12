@@ -1,3 +1,4 @@
+  //configuration file  which we export Next Auth function
 import NextAuth from "next-auth";
 import { UserRole } from "@prisma/client";
 import { PrismaAdapter } from "@auth/prisma-adapter";
@@ -8,6 +9,7 @@ import { getUserById } from "@/data/user";
 import { getTwoFactorConfirmationByUserId } from "./data/TwoFactorConfirmation";
 import { getAccountByUserId } from "./data/account";
 
+//handlers include GET, POST 
 export const { auth, handlers, signIn, signOut } = NextAuth({
   pages: {
     signIn: "/auth/login",

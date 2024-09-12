@@ -20,6 +20,7 @@ export default async function RootLayout({
   const session = await auth();
 
   return (
+    // wrapping application with session provider
     <SessionProvider session={session}>
       <html lang="en">
         <body className={inter.className}>
