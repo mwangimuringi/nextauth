@@ -6,9 +6,6 @@ import './globals.css'
 import { Toaster } from '@/components/ui/sonner'
 
 const inter = Inter({ subsets: ['latin'] })
-catch (error) {
-  console.log(error)
-}
 
 export const metadata: Metadata = {
   title: 'Create Next App',
